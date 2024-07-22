@@ -1,0 +1,96 @@
+.Field--routesDivision {
+	max-width: 140px;
+}
+.Field--routesRepresentative {
+	max-width: 300px;
+}
+
+.ControlGroup--routes,
+.btnMain--rounteLunch {
+	margin-right: 1em;
+}
+
+.BubbleSelect--routes {
+	.BubbleSelect__list {
+		text-align: center;
+	}
+}
+
+.Items--routes {
+	position: relative;
+	
+	.Items__list {
+		table-layout: fixed;
+	}
+	
+	.Item {
+		&--overdue {
+			background-color: #f7e9e9;
+			
+			.RouteMeet__link {
+				color: $accent;
+				
+				&:hover {
+					opacity: .7;
+				}
+			}
+		}
+	}
+
+	.Item__box {
+		box-sizing: border-box;
+		vertical-align: top;
+		word-wrap: break-word;
+		padding-x: 5px;
+		
+		&--count,
+		&--int,
+		&--id,
+		&--meet,
+		&--task,
+		&--controls { text-align: center; }
+
+		&--count,
+		&--comment {
+			padding-right: 0;
+		}
+		
+		&--count { width: 6%; }
+		&--int { width: 3%; }
+		&--comment { width: 3%; }
+		&--id { width: 7%; }
+		&--status1 { width: 15%; }
+		&--status2 { width: 8%; }
+		&--info { width: 29%; }
+		&--meet { width: 8%; }
+		&--task { width: 8%; }
+		&--controls { width: 10.5%; }
+
+		&--comment { padding-x: 0; }
+
+		&--controls {
+			vertical-align: middle;
+			
+			.btnMain,
+			.btnAdd {
+				width: 100%;
+			}
+		}
+
+		.RouteItemInfo__address {
+			margin-top: .3em;
+		}
+
+		.RouteControls__box + .RouteControls__box {
+			margin-top: 1em;
+		}
+
+		.RouteStatus {
+			font-weight: bold;
+			
+			&--smb {
+				color: $accent;
+			}
+		}
+	}
+}

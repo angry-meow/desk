@@ -1,0 +1,288 @@
+/*
+ * Copyright (c) 2008 - 2010 Janis Skarnelis
+ * Updated by Sergei Vasilev (https://github.com/Ser-Gen)
+ *
+ * Version: 1.7.9
+ *
+ * Dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ */
+
+#fancybox-loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	cursor: pointer;
+	overflow: hidden;
+	z-index: 1104;
+	display: none;
+}
+#fancybox-loading div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 480px;
+	background-image: url("img/fancybox-1.4.5.png");
+	background-repeat: no-repeat;
+}
+#fancybox-overlay {
+	width: 100%;
+	z-index: 1100;
+	display: none;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto !important;
+
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+
+	text-align: center;
+	white-space: nowrap;
+}
+#fancybox-overlay:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+#fancybox-tmp {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: auto;
+	display: none;
+}
+#fancybox-wrap {
+	cursor: auto;
+	z-index: 1101;
+	outline: none;
+	display: none;
+	text-align: left;
+	vertical-align: middle;
+	white-space: normal;
+}
+
+.fancybox__touch #fancybox-overlay:before {
+	display: none;
+}
+.fancybox__touch #fancybox-wrap {
+	margin: 30px 0;
+}
+
+#fancybox-outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,.3);
+}
+#fancybox-content {
+	width: 0;
+	height: auto;
+	padding: 0;
+	outline: none;
+	position: relative;
+	overflow: hidden;
+	z-index: 1102;
+}
+#fancybox-hide-sel-frame {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 1101;
+}
+#fancybox-close {
+	position: relative;
+	margin-top: -15px;
+	margin-right: -15px;
+	margin-bottom: -15px;
+	width: 30px;
+	height: 30px;
+	float: right;
+	background: transparent url('img/fancybox-1.4.5.png') -45px 0px no-repeat;
+	cursor: pointer;
+	z-index: 1103;
+	display: none;
+}
+
+@supports (position: sticky) {
+	#fancybox-close {
+		position: sticky;
+		top: 0;
+		margin: 0;
+		width: 0;
+		height: 0;
+		background: none;
+	}
+
+	#fancybox-close:before {
+		content: '';
+		position: absolute;
+		top: -15px;
+		right: -15px;
+		width: 30px;
+		height: 30px;
+		background: transparent url('img/fancybox-1.4.5.png') -45px 0 no-repeat;
+	}
+}
+
+#fancybox-error {
+	color: #444;
+	font: normal 12px/20px Arial, Helvetica, sans-serif;
+	padding: 14px;
+	margin: 0;
+}
+#fancybox-img {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	line-height: 0;
+	vertical-align: top;
+}
+#fancybox-frame {
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: block;
+}
+#fancybox-left,
+#fancybox-right {
+	position: absolute;
+	bottom: 0px;
+	height: 100%;
+	width: 35%;
+	cursor: pointer;
+	outline: none;
+	background: transparent url("img/blank.gif");
+	z-index: 1102;
+	display: none;
+}
+#fancybox-left {
+	left: 0px;
+}
+#fancybox-right {
+	right: 0px;
+}
+#fancybox-left-ico,
+#fancybox-right-ico {
+	position: absolute;
+	top: 50%;
+	left: -9999px;
+	width: 30px;
+	height: 30px;
+	margin-top: -15px;
+	cursor: pointer;
+	z-index: 1102;
+	display: block;
+}
+#fancybox-left-ico {
+	background-image: url("img/fancybox-1.4.5.png");
+	background-position: -45px -30px;
+	background-repeat: no-repeat;
+}
+#fancybox-right-ico {
+	background-image: url("img/fancybox-1.4.5.png");
+	background-position: -45px -60px;
+	background-repeat: no-repeat;
+}
+#fancybox-left:hover span {
+	left: 20px;
+}
+#fancybox-right:hover span {
+	left: auto;
+	right: 20px;
+}
+#fancybox-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	z-index: 1102;
+}
+.fancybox-title-inside {
+	padding-bottom: 10px;
+	text-align: center;
+	color: #333;
+	background: #fff;
+	position: relative;
+}
+.fancybox-title-outside {
+	padding-top: 10px;
+	color: #fff;
+}
+.fancybox-title-over {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	text-align: left;
+}
+#fancybox-title-over {
+	padding: 10px;
+	background-image: url("img/fancy_title_over.png");
+	display: block;
+}
+.fancybox-title-float {
+	height: 32px;
+	margin-top: 1em;
+}
+#fancybox-title-float-wrap {
+	border: none;
+	border-collapse: collapse;
+	margin: auto;
+	width: auto;
+}
+#fancybox-title-float-wrap td {
+	border: none;
+	white-space: nowrap;
+}
+#fancybox-title-float-left {
+	padding: 0 0 0 15px;
+	background: url("img/fancybox-1.4.5.png") -45px -90px no-repeat;
+}
+#fancybox-title-float-main {
+	color: #fff;
+	line-height: 29px;
+	font-weight: bold;
+	padding: 0 0 3px 0;
+	background: url("img/fancybox-x.png") 0px -40px;
+}
+#fancybox-title-float-right {
+	padding: 0 0 0 15px;
+	background: url("img/fancybox-1.4.5.png") -60px -90px no-repeat;
+}
+.fancybox__lock {
+	overflow: visible !important;
+	width: auto;
+}
+.fancybox__lock body {
+	overflow: hidden !important;
+}
+.fancybox__lock.fancybox__touch body {
+	position: fixed !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+.fancybox__shift #fancybox-overlay {
+	overflow: auto;
+	overflow-y: scroll;
+}
+
+/* IE8 */
+.fancybox-ie .fancybox-bg {
+	background: transparent !important;
+}

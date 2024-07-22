@@ -1,0 +1,337 @@
+/* FEEDBACK
+------------------------------------------------------------------------------*/
+
+@keyframes opacity {
+	0% { opacity: 1; }
+	50% { opacity: 1; }
+	75% { opacity: .4; }
+	100% { opacity: 1; }
+}
+
+.filter {
+
+	&--feedbackResponsible,
+	&--feedbackType,
+	&--feedbackBranch {
+		width: 228px;
+	}
+
+	&--feedbackRating {
+		width: 120px;
+	}
+
+	&--feedbackKeywords {
+		width: 300px;
+	}
+}
+
+.Feedback {
+
+	&__comments {
+		color: #1782aa;
+		cursor: pointer;
+		display: inline-block;
+		text-align: right;
+		vertical-align: middle;
+	
+		&:hover {
+			color: #28bd8b;
+		}
+
+		&:before {
+			content: '';
+			display: inline-block;
+			background: resolve('icons/comment_empty.png') no-repeat;
+			width: width('icons/comment_empty.png');
+			height: height('icons/comment_empty.png');
+			vertical-align: middle;
+			margin-top: -0.3em;
+			margin-right: 7px;
+		}
+
+		&--unread:before {
+			background: resolve('icons/comment_full.png') no-repeat;
+			animation: opacity 1s infinite linear;
+			
+			.TipTip__active& {
+				animation: none;
+			}
+		}
+	}
+
+	&__theme,
+	&__client {
+		display: block;
+	}
+
+	&__theme {
+		font-size: 13px;
+	}
+
+	&__client {
+		color: #999;
+		font-size: 11px;
+	}
+}
+
+.Feedback__list {
+	.Items__header .Item__box {
+		vertical-align: middle;
+	}
+
+	.Item__box {
+		vertical-align: top;
+		
+		&--indicator {
+			width: 1%;
+		}
+
+		&--number {
+			color: #999;
+			font-size: 11px;
+		}
+
+		&--name {
+			padding-left: calc(width('icons/rating-no.png') + 6px);
+		}
+
+	}
+
+	.Rating:before {
+		vertical-align: top;
+		padding-right: 6px;
+		margin: -.2em 0 0 -22px;
+		width: calc(width('icons/rating-no.png') - 12px);
+		height: calc(height('icons/rating-no.png') - 12px);
+	}
+}
+
+.feedbackInfo {
+	box-sizing: border-box;
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	
+	.BadgeStatus__indicator {
+		width: .9em;
+		height: .9em;
+	}
+
+	.Form {
+		padding: 20px 15px 0;
+		margin: 0 -15px;
+
+		&__set {
+			width: 100%;
+			
+			&--submit {
+				margin-top: 25px;
+			}
+		}
+
+		&__title {
+			font-size: 13px;
+			font-weight: bold;
+		}
+	}
+
+	&__number {
+		color: #999;
+	}
+	
+	&__type {
+		color: #999;
+		font-size: 13px;
+		margin-top: 5px;
+	}
+
+	&__box {
+		box-sizing: border-box;
+		display: table-cell;
+		vertical-align: top;
+		
+		&--chat {
+			padding: 20px 15px;
+			width: 590px;
+			
+			.Form {
+				border-top: 1px solid #dadada;
+			}
+		}
+
+		&--responsible {
+			background-color: #efefef;
+			
+			.Form__set--submit {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.Upload {
+		margin-top: 12px;
+
+		&--attachments {
+			margin-top: 0;
+		}
+	}
+}
+
+.feedbackClient {
+	background: #efefef;
+	box-sizing: border-box;
+	display: table;
+	font-size: 13px;
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+
+	&__box {
+		box-sizing: border-box;
+		display: table-cell;
+		vertical-align: top;
+		line-height: 1.5em;
+		padding-left: 15px;
+		
+		&--last {
+			text-align: right;
+			padding-top: .1em;
+		}
+
+		&--first {
+			padding-left: 0;
+			width: 180px;
+		}
+	}
+
+	&__item {
+		&--status {
+			color: #999;
+		}
+
+		&--name {
+			display: inline-block;
+			font-weight: bold;
+			color: #1782aa;
+			cursor: pointer;
+			
+			&:hover {
+				color: #28bd8b;
+			}
+		}
+	}
+}
+
+.feedbackChat {
+	box-sizing: border-box;
+	font-size: 13px;
+	padding: 15px 0;
+}
+
+
+.feedbackService {
+	&__title {
+		color: #555;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.Reply {
+		padding-bottom: 0;
+	}
+
+	.ReplyText {
+		background-color: #fff;
+		padding: 12px 10px;
+	}
+}
+
+
+.feedbackWrapper {
+	padding: 15px;
+	
+	& + .feedbackWrapper {
+		border-top: 1px solid  #dadada;
+	}
+}
+
+.feedbackEmployee {
+	font-size: 13px;
+	
+	&__photo {
+		display: inline-block;
+		width: 42px;
+		height: 42px;
+		margin-right: 5px;
+		position: relative;
+	}
+	
+	.Spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		opacity: 0;
+		visibility: hidden;
+		transition:
+		  opacity .2s ease-in-out,
+		  visibility .2s ease-in-out;
+		
+		.not-oldie & {
+			border-width: 2px;
+			border-color: $main $main transparent transparent;
+			font-size: 48px;
+			margin-left: -21px;
+			margin-top: -21px;
+		}
+
+		&--active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	
+	&__img {
+		width: 100%;
+		height: auto;
+		
+		&--hide {
+			opacity: 0;
+			visibility: hidden;			
+		}
+	}
+
+	&__info {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__name {
+		color: #1782aa;
+		cursor: pointer;
+		
+		&:hover {
+			color: #28bd8b;
+		}
+	}
+}
+
+.feedbackRating {
+	font-size: 13px;
+	padding-left: 25px;
+
+	&__box {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
+	}
+
+	&__title {
+		color: #999;
+	}
+
+	&__description {
+		font-weight: bold;
+	}
+}
+

@@ -1,0 +1,57 @@
+.Calculator {
+	&.FancyModal {
+		width: 700px;
+	}
+
+	.Form__set {
+		width: 100%;
+	}
+	.Form__field {
+		margin-left: 130px;
+	}
+	.Form__title {
+		margin-left: -130px;
+		text-align: left;
+		width: 120px;
+		height: auto;
+	}
+
+	.Specs {
+		padding-top: 1.5em;
+		padding-bottom: 0;
+	}
+	.Specs__item {
+		width: 50%;
+		
+		&--calculatorData {
+			padding-bottom: 0;
+			width: 100%;
+		}
+
+		&--keyValue {
+			.Group {
+				width: 70%;
+			}
+			.Box--value {
+				white-space: nowrap;
+				width: 1px;
+			}
+		}
+	}
+}
+
+.Items--calculatorData {
+	margin: -1em -$indentX 0;
+	
+	.Item {
+		.Item__box--calculated,
+		.Item__box--client {
+			text-align: center;
+			width: 1px;
+			white-space: nowrap;
+		}
+	}
+	.Item__box--category {
+		width: 30%;
+	}
+}

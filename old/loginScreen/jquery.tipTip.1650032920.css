@@ -1,0 +1,283 @@
+/*
+ * TipTip CSS
+ * Copyright 2010 Drew Wilson
+ *
+ * Modified by: Sergei Vasilev (https://github.com/Ser-Gen/TipTip)
+ *
+ * Version 1.9.0
+ *
+ * This TipTip jQuery plug-in is dual licensed under the MIT and GPL licenses:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *   http://www.gnu.org/licenses/gpl.html
+ *
+ *
+<div class="TipTip TipTip--top TipTip--theme-white">
+	<div class="TipTip__arrow">
+		<div class="TipTip__pointer"></div>
+	</div>
+	<div class="TipTip__content">Содержимое Типа</div>
+</div>
+ *
+ */
+
+.TipTip {
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	z-index: 9999;
+}
+
+.TipTip--right { padding-left: 5px; }
+.TipTip--left { padding-right: 5px; }
+
+.TipTip__content {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	-webkit-border-radius: 3px;
+	        border-radius: 3px;
+	-webkit-box-shadow: 0 0 3px #555;
+	        box-shadow: 0 0 3px #555;
+	font-size: 12px;
+	line-height: 1.4;
+	padding: 4px 8px;
+	word-wrap: break-word;
+}
+
+.TipTip__arrow,
+.TipTip__pointer {
+	height: 0;
+	position: absolute;
+	width: 0;
+	pointer-events: none;
+}
+
+.TipTip__donor {
+	display: none !important;
+}
+
+
+.TipTip--top .TipTip__pointer {
+	margin-top: -7px;
+	margin-left: -6px;
+}
+
+.TipTip--resetPadding .TipTip__content {
+	padding: 0;
+}
+
+
+
+/* DEFAULT BLACK THEME
+-----------------------------------------------------------------*/
+
+.TipTip.TipTip--theme-black .TipTip__content {
+	background-color: rgb(25,25,25);
+	background-color: rgba(25,25,25,.92);
+	background-image: -webkit-linear-gradient(transparent, #000);
+	background-image:      -o-linear-gradient(transparent, #000);
+	background-image:         linear-gradient(transparent, #000);
+	border: 1px solid rgba(255,255,255,.25);
+	color: #fff;
+	text-shadow: 0 0 2px #000;
+}
+
+.TipTip--theme-black .TipTip__content a {
+	color: #95bff0;
+}
+
+.TipTip.TipTip--theme-black .TipTip__arrow,
+.TipTip.TipTip--theme-black .TipTip__pointer {
+	border: 6px solid transparent;
+}
+
+.TipTip--top.TipTip--theme-black .TipTip__arrow {
+	border-top-color: #fff;
+	border-top-color: rgba(255,255,255,.35);
+}
+.TipTip--bottom.TipTip--theme-black .TipTip__arrow {
+	border-bottom-color: #fff;
+	border-bottom-color: rgba(255,255,255,.35);
+}
+.TipTip--right.TipTip--theme-black .TipTip__arrow {
+	border-right-color: #fff;
+	border-right-color: rgba(255,255,255,.35);
+}
+.TipTip--left.TipTip--theme-black .TipTip__arrow {
+	border-left-color: #fff;
+	border-left-color: rgba(255,255,255,.35);
+}
+
+.TipTip--top.TipTip--theme-black .TipTip__pointer {
+	border-top-color: rgb(25,25,25);
+	border-top-color: rgba(25,25,25,.92);
+}
+.TipTip--bottom.TipTip--theme-black .TipTip__pointer {
+	border-bottom-color: rgb(25,25,25);
+	border-bottom-color: rgba(25,25,25,.92);
+	margin-top: -6px;
+	margin-left: -6px;
+}
+.TipTip--right.TipTip--theme-black .TipTip__pointer {
+	border-right-color: rgb(25,25,25);
+	border-right-color: rgba(25,25,25,.92);
+	margin-top: -6px;
+	margin-left: 0;
+}
+.TipTip--left.TipTip--theme-black .TipTip__pointer {
+	border-left-color: rgb(25,25,25);
+	border-left-color: rgba(25,25,25,.92);
+	margin-top: -6px;
+	margin-left: -7px;
+}
+
+/* Webkit Hacks  */
+@media screen and (-webkit-min-device-pixel-ratio:0) {	
+	.TipTip.TipTip--theme-black .TipTip__content {
+		background-color: rgba(45,45,45,.88);
+		padding: 4px 8px 5px;
+	}
+	.TipTip--bottom.TipTip--theme-black .TipTip__pointer { 
+		border-bottom-color: rgba(45,45,45,.88);
+	}
+	.TipTip--top.TipTip--theme-black .TipTip__pointer { 
+		border-top-color: rgba(20,20,20,.92);
+	}
+}
+
+
+
+/* ALT THEME
+-----------------------------------------------------------------*/
+
+.TipTip--top.TipTip--theme-alt .TipTip__pointer {
+	border-top-color: #444;
+}
+.TipTip--bottom.TipTip--theme-alt .TipTip__pointer {
+	border-bottom-color: #444;
+}
+.TipTip--right.TipTip--theme-alt .TipTip__pointer {
+	border-right-color: #444;	
+}
+.TipTip--left.TipTip--theme-alt .TipTip__pointer {
+	border-left-color: #444;
+}
+
+.TipTip--top .TipTip__arrow,
+.TipTip--right .TipTip__arrow,
+.TipTip--bottom .TipTip__arrow,
+.TipTip--left .TipTip__arrow {
+	border-color: transparent;
+}
+
+.TipTip.TipTip--theme-alt .TipTip__content {
+	background-color: #444;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 0 3px #555;
+	        box-shadow: 0 0 3px #555;
+	color: #fff;
+	font-size: 11px;
+	padding: 4px 8px;
+	text-shadow: 0 0 1px #000;
+}
+
+/*corner tips*/
+.TipTip--left-top .TipTip__arrow,
+.TipTip--right-top .TipTip__arrow,
+.TipTip--left-bottom .TipTip__arrow,
+.TipTip--right-bottom .TipTip__arrow {
+	display: none;
+}
+
+
+
+/* WHITE THEME
+-----------------------------------------------------------------*/
+
+.TipTip.TipTip--theme-white .TipTip__pointer {
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAASAgMAAAA8gvYNAAAADFBMVEUAAAD///+zs7PS0tJZ+3BbAAAAAXRSTlMAQObYZgAAAFFJREFUCNc1jbENgDAQA090EDEK41h0ESNQUjIKS2QU+owSF4700kv22YZduoEidWD5zxc6rVJ4OHxUto+GDdsYM4wuWOeLGCSBxFOW6gxldgDJFRuLVvEsPQAAAABJRU5ErkJggg==') no-repeat;
+}
+
+.TipTip--top.TipTip--theme-white .TipTip__pointer,
+.TipTip--bottom.TipTip--theme-white .TipTip__pointer {
+	border: 0;
+	height: 6px;
+	margin-left: 0;
+	width: 12px;
+}
+.TipTip--top.TipTip--theme-white .TipTip__pointer {
+	background-position: -6px 0;
+	margin-top: -1px;
+}
+.TipTip--bottom.TipTip--theme-white .TipTip__pointer {
+	background-position: -6px 100%;
+	height: 8px;
+	margin-top: 5px;
+}
+
+.TipTip--right.TipTip--theme-white .TipTip__pointer,
+.TipTip--left.TipTip--theme-white .TipTip__pointer {
+	border: 0;
+	height: 12px;
+	width: 6px;
+}
+.TipTip--right.TipTip--theme-white .TipTip__pointer {
+	background-position: 100% -3px;
+	margin-left: 12px;
+}
+.TipTip--left.TipTip--theme-white .TipTip__pointer {
+	background-position: 0 -3px;
+	margin-left: -1px;
+}
+
+.TipTip.TipTip--theme-white .TipTip__content {
+	background-color: #fafafa;
+	background-color: rgba(245,245,245,.97);
+	background-image: -webkit-linear-gradient(#fff, #fafafa);
+	background-image:      -o-linear-gradient(#fff, #fafafa);
+	background-image:         linear-gradient(#fff, #fafafa);
+	-webkit-box-shadow: 0 7px 12px rgba(0,0,0,.15);
+	        box-shadow: 0 7px 12px rgba(0,0,0,.15);
+	border: 1px solid #b3b3b3;
+	color: #000;
+}
+
+
+
+/* ERROR THEME
+-----------------------------------------------------------------*/
+
+.TipTip--theme-error .TipTip__pointer{
+	background: none;
+	border: 5px solid transparent;
+	height: 0;
+	width: 0;
+}
+.TipTip--theme-error.TipTip--top .TipTip__pointer {
+	border-top-color: #dc241f;
+	border-bottom-width: 0;
+	margin-top: -1px;
+}
+.TipTip--theme-error.TipTip--right .TipTip__pointer {
+	border-right-color: #dc241f;
+	border-left-width: 0;
+	margin-left: 12px;
+}
+.TipTip--theme-error.TipTip--bottom .TipTip__pointer {
+	border-bottom-color: #dc241f;
+	border-top-width: 0;
+	margin-top: 7px;
+}
+.TipTip--theme-error.TipTip--left .TipTip__pointer {
+	border-left-color: #dc241f;
+	border-right-width: 0;
+	margin-right: -1px;
+}
+.TipTip--theme-error .TipTip__content {
+	background-color: #dc241f;
+	border-color: #dc241f;
+	box-shadow: 0 7px 12px rgba(0,0,0,.15);
+	color: #fff;
+}

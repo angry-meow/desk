@@ -1,0 +1,79 @@
+.Contact {
+	&.FancyModal {
+		width: 700px;
+	}
+	.FancyModal__content,
+	.FancyModal__control {
+		padding-right: 35px;
+	}
+
+	&__name {
+		font-weight: normal;
+		margin-top: 0;
+	}
+
+	.Form__set {
+		width: 100%;
+	}
+	.Form__field {
+		margin-left: 130px;
+	}
+	.Form__title {
+		margin-left: -130px;
+		text-align: left;
+		width: 120px;
+	}
+
+	.Contact__commercialInfo {
+		height: auto;
+	}
+
+	.ContactDetails {
+		&__header {
+			font-size: 18px;
+			font-weight: normal;
+		}
+
+		.Form__field .btnInfo {
+			position: absolute;
+			top: 0;
+			left: 100%;
+			width: 20px;
+			height: 20px;
+		}
+
+		textarea.Form__input {
+			height: 100px;
+		}
+	}
+
+	.ContactTask {
+		&__title {
+			display: block;
+			font-weight: bold;
+			margin-bottom: .3em;
+		}
+	}
+
+	.ContactResultable {
+		margin-right: 1.5em;
+		
+		&__input {
+			margin-right: .3em;
+		}
+
+		&__title {
+			&:before {
+				content: "";
+				@mixin SmileSadS;
+				margin-right: .4em;
+			}
+		}
+	}
+}
+
+.Contact--defined {
+	.Specs {
+		margin-top: 1.5em;
+	}
+}

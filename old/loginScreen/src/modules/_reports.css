@@ -1,0 +1,16 @@
+.Reports {
+	&.contentWrapper {
+		padding: 20px;
+	}
+}
+
+.filter {
+	&--reportsUnit {
+		width: 150px;
+	}
+
+	&--reportsSum {
+		width: 100px;
+	}
+}
+

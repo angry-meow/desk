@@ -1,0 +1,131 @@
+/* Mail Dev
+------------------------------------------------------------------------------*/
+
+.filter--mailSubject {
+	width: 148px;
+}
+.filter--mailStatus,
+.filter--mailIndustry {
+	width: 75px;
+}
+.filter--mailDivision {
+	width: 92px;
+}
+
+.Items--mail {
+	.Items__list {
+		table-layout: fixed;
+	}
+
+	.Item .Item__box {
+		vertical-align: top;
+	}
+	.Item__box--indicator {
+		padding-right: 0;
+		white-space: nowrap;
+		width: 10px;
+	}
+	.Item__box--status {
+		width: 15%;
+	}
+	.Item__box--subject {
+		width: 45%;
+	}
+	.Item__box--client {
+		width: 15%;
+	}
+
+	.Item__box--spam {
+		width: 15%;
+	}
+
+	.Mail__indicator {
+		cursor: help;
+	}
+
+	.Item--wait {
+		.Mail__indicator {
+			@mixin BadgeIndicator $attention;
+		}
+	}
+	.Item--work {
+		.Mail__indicator {
+			@mixin BadgeIndicator $main;
+		}
+	}
+	.Item--disable {
+		.Mail__indicator {
+			@mixin BadgeIndicator $disable;
+		}
+
+		.Mail__division,
+		.Mail__date,
+		.Mail__views {
+			color: inherit;
+			opacity: .6;
+		}
+
+		&:hover .Mail__views:before {
+			opacity: 1;
+		}
+	}
+
+	.Mail__division,
+	.Mail__date,
+	.Mail__views {
+		color: #555;
+		display: block;
+		font-size: 11px;
+		margin-top: .3em;
+	}
+
+	.Mail__views:before {
+		content: '';
+		background-image: resolve('icons/eye_gray.png');
+		width: width('icons/eye_gray.png');
+		height: height('icons/eye_gray.png');
+		display: inline-block;
+		opacity: .6;
+		vertical-align: middle;
+		margin-top: -.2em;
+		margin-right: .4em;
+	}
+}
+
+
+/* �������� �������� */
+
+.mainContent .contentWrapper.MailStatus {
+	padding-y: 0 5px;
+	
+	.Mail__date {
+		font-size: 14px;
+		margin-right: 1.5em;
+		vertical-align: sub;
+	}
+}
+
+.Specs--mail {
+	.Group--mailOptions {
+		width: 500px;
+	}
+
+	.Specs__header {
+		font-size: 13px;
+	}
+
+	.Mail__subject {
+		width: 500px;
+	}
+	.Mail__option {
+		display: block;
+		
+		& + .Mail__option {
+			margin-top: .5em;
+		}
+	}
+
+	.Mail__db {
+		margin-right: 1em;
+	}
+}

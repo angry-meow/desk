@@ -1,0 +1,64 @@
+/* ACCOUNTS
+------------------------------------------------------------------------------*/
+
+.Account {
+	&__main.contentWrapper {
+		padding: 0 20px 20px;
+	}
+
+	.Specs__header {
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	.Specs__content {
+		margin-top: 5px;
+	}
+}
+
+.Items--account {
+	.Item {
+		&__box {
+			vertical-align: top;
+			
+			&--client {
+				width: 25%;
+			}
+		}
+
+		&__additional {
+			display: block;
+			margin-top: .3em;
+		}
+	}
+}
+
+.AccountResetPass {
+	font-size: 13px;
+	padding: 12px;
+	
+	&__box {
+		& + & {
+			margin-top: 1em;
+		}
+
+		&--title {
+			color: #4c4c4c;
+			line-height: 1em;
+		}
+	}
+
+	&__link {
+		color: #999;
+		width: 290px;
+		text-overflow: ellipsis;
+	}
+
+	&__notice {
+		color: #b2b2b2;
+		font-size: 12px;
+		vertical-align: middle;
+		margin-left: 10px;
+		display: none;
+	}
+}

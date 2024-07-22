@@ -1,0 +1,148 @@
+/* SEARCH STATISTICS
+------------------------------------------------------------------------------*/
+
+.filter__searchEffectiveness {
+	text-align: center;
+	width: 45px;
+}
+.filter__searchQuery {
+	width: 150px;
+}
+
+.Items--search-queries {
+	.Items {
+		&__title {
+			padding-left: 20px;
+			margin: 0;
+			font-size: 14px;
+		}
+	}
+
+	.Item__box {
+
+		&--count,
+		&--cart,
+		&--effectiveness,
+		&--zeroResidue {
+			text-align: center;
+			white-space: nowrap;
+			width: 1px;
+			min-width: 130px;
+		}
+
+		&--look {
+			padding: 0 0 0 10px;
+			width: 1px;
+
+			.Item__look {
+				width: 15px;
+			}
+		}
+	}
+}
+
+.Items--search-queries-compare {
+	.Items {
+		&__title {
+			padding-left: 20px;
+			margin: 0;
+			font-size: 14px;
+		}
+	}
+
+	.Items__header {
+		.Item__box {
+			&--count,
+			&--cart,
+			&--effectiveness,
+			&--zeroResidue {
+				text-align: center;
+			}
+		}
+	}
+
+	.Item__box {
+
+		&--count {
+			width: 150px;
+		}
+		&--cart,
+		&--effectiveness,
+		&--zeroResidue {
+			white-space: nowrap;
+			width: 1px;
+		}
+
+		&--look {
+			padding: 0 0 0 10px;
+			width: 1px;
+
+			.Item__look {
+				width: 15px;
+			}
+		}
+	}
+
+	.Item__subcolumn {
+
+		&--value {
+			text-align: right;
+		}
+		&--delta {
+			text-align: left;
+		}
+	}
+}
+
+.Items--search-products {
+	.Item__box {
+		&--code,
+		&--add {
+			text-align: center;
+			width: 160px;
+		}
+	}
+
+	.Item__img {
+		max-width: 49px;
+		height: auto;
+	}
+}
+
+.Search__effectivenessTrigger {
+	border-bottom: 1px dashed;
+	cursor: help;
+}
+.SearchStat {
+	display: table;
+	font-size: 11px;
+	
+	&__item {
+		display: table-row;
+	}
+
+	&__box {
+		display: table-cell;
+		vertical-align: middle;
+		padding: 7px;
+		
+		&--type {
+			width: 100%;
+		}
+		&--result {
+			text-align: right;
+			width: 1px;
+		}
+	}
+
+	&__item + &__item {
+		.SearchStat__box {
+			padding-top: 2px;
+		}
+	}
+}
+
+.Tabs--search-query {
+	margin-top: 1.5em;
+}
+
